@@ -2,50 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/footer.module.css";
 
-const FOOTER_COLUMNS = [
-  {
-    heading: "PRODUCTS",
-    links: [
-      { name: "Apps", href: "#" },
-      { name: "Workflows", href: "#" },
-      { name: "Database", href: "#" },
-      { name: "Mobile", href: "#" },
-    ],
-  },
-  {
-    heading: "SOLUTIONS",
-    links: [
-      { name: "AI apps", href: "#" },
-      { name: "External apps", href: "#" },
-      { name: "Integrations", href: "#" },
-      { name: "Self-hosting", href: "#" },
-    ],
-  },
-  {
-    heading: "RESOURCES",
-    links: [
-      { name: "Blog", href: "#" },
-      { name: "Reports", href: "#" },
-    ],
-  },
-  {
-    heading: "DEVELOPERS",
-    links: [
-      { name: "Documentation", href: "#" },
-      { name: "Changelog", href: "#" },
-      { name: "Status", href: "#" },
-      { name: "Developer Network", href: "#" },
-    ],
-  },
-  {
-    heading: "COMPANY",
-    links: [
-      { name: "About", href: "/about" },
-      { name: "Careers", href: "#" },
-      { name: "Partners", href: "#" },
-    ],
-  },
-];
+import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (
@@ -107,19 +64,19 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16">
         {/* Upper row: 5 columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-12 mb-16 md:mb-20">
-          {FOOTER_COLUMNS.map((column) => (
-            <div key={column.heading} className="flex flex-col gap-4">
+          {FOOTER_DATA.map((column) => (
+            <div key={column.title} className="flex flex-col gap-4">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
-                {column.heading}
+                {column.title}
               </h3>
               <ul className="flex flex-col gap-3">
-                {column.links.map(({ name, href }) => (
-                  <li key={name}>
+                {column.data.map((item) => (
+                  <li key={item.name}>
                     <Link
-                      href={href}
+                      href={item.link}
                       className="text-sm text-gray-300 hover:text-white transition-colors"
                     >
-                      {name}
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -171,17 +128,7 @@ export const Footer = () => {
               </Link>
             </div>
             <div className="flex flex-col gap-2 md:items-end">
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-gray-500">
-                <Link href="#" className="hover:text-gray-400 transition-colors">
-                  TERMS OF USE
-                </Link>
-                <Link href="#" className="hover:text-gray-400 transition-colors">
-                  PRIVACY POLICY
-                </Link>
-                <Link href="#" className="hover:text-gray-400 transition-colors">
-                  SECURITY
-                </Link>
-              </div>
+
               <p className="text-xs text-gray-500">
                 © STARTUP SPHERE {new Date().getFullYear()}
               </p>

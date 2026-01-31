@@ -323,6 +323,21 @@ export const FOOTER_DATA = [
     ],
   },
   {
+    title: "Resources",
+    data: [
+      {
+        name: "Posts",
+        icon: null,
+        link: "https://www.linkedin.com/company/startups-sphere/",
+      },
+      {
+        name: "Reports",
+        icon: null,
+        link: "https://www.linkedin.com/company/startups-sphere/",
+      },
+    ],
+  },
+  {
     title: "Startup Sphere",
     data: [
       {

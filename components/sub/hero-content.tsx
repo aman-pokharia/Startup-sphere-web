@@ -6,6 +6,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+import InfiniteMenu from '@/components/sub/infinite';
+
+const GALLERY_ITEMS = [
+  { src: '/jiya.jpg', label: 'Fish Tank 2.0' },
+  { src: '/fem.jpg', label: 'Venture Lab' },
+  { src: '/shubh.jpg', label: 'Workshops' },
+  { src: '/team.jpg', label: 'Community Meetup' },
+  { src: '/plant.jpg', label: 'Innovation Day' },
+];
+
 import {
   slideInFromLeft,
   slideInFromRight,
@@ -75,14 +85,17 @@ export const HeroContent = () => {
 
       <div className="w-full h-full flex justify-center items-center">
         <motion.div variants={slideInFromRight(0.8)} className="w-full h-full flex justify-center items-center">
-          <Image
-            src="/hero-bg.svg"
-            alt="work icons"
-            height={650}
-            width={650}
-            draggable={false}
-            className="select-none"
-          />
+          <div style={{ height: '600px', position: 'relative' }}>
+            <InfiniteMenu 
+              items={GALLERY_ITEMS.map(item => ({
+                image: item.src,
+                link: '#',
+                title: item.label,
+                description: `${item.label} - Startup Sphere Gallery`
+              }))}
+              scale={1}
+            />
+          </div>
         </motion.div>
       </div>
     </div>

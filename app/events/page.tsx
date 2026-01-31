@@ -8,7 +8,7 @@ export default function EventsPage() {
       title: "Fish Tank 2.0",
       description: "Our flagship pitching competition – where creativity meets courage, mentorship meets guidance, and ideas meet opportunity. Participants didn't just pitch ideas; they brought solutions, passion, and vision to the table. Each presentation was a glimpse into the future of innovation.",
       details: "Distinguished jury and mentors provided invaluable insights. Growth happens when ideas are challenged, guidance is given, and collaboration takes place.",
-      image: "/projects/project-1.png",
+      image: "/jiya.jpg",
       date: "March 15, 2024",
       location: "MAIT Auditorium"
     },
@@ -17,7 +17,7 @@ export default function EventsPage() {
       title: "Canva Basics Workshop",
       description: "An exclusive learning session for our members – a hands-on class designed to help you create impactful posters, presentations, and social media creatives from scratch. No prior design experience required – just enthusiasm and creativity!",
       details: "",
-      image: "/projects/project-2.png",
+      image: "/fem.jpg",
       date: "April 3, 2024",
       location: "Design Studio"
     },
@@ -26,7 +26,7 @@ export default function EventsPage() {
       title: "Venture Lab & Campus Ventures",
       description: "From campus idea to platform – we support and celebrate ventures like CampusMart and other student-led initiatives that are shaping the future through creativity, courage, and collaboration. If you have an idea that can make a difference, we're here to help you build it.",
       details: "",
-      image: "/projects/project-3.png",
+      image: "/blue.jpg",
       date: "May 20, 2024",
       location: "Innovation Hub"
     },
@@ -35,7 +35,7 @@ export default function EventsPage() {
       title: "Startup Pitch Night",
       description: "An evening of innovation where emerging startups showcase their groundbreaking ideas to industry experts and potential investors. A platform for visionary entrepreneurs to share their journey and connect with the startup ecosystem.",
       details: "Multiple startups presented their ideas with live Q&A sessions and networking opportunities.",
-      image: "/team.jpg",
+      image: "/shubh.jpg",
       date: "June 10, 2024",
       location: "Entrepreneur Center"
     }

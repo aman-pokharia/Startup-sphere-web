@@ -18,7 +18,7 @@ export default function TeamPage() {
       name: "Dr. Bhoomi Gupta",
       role: "HOD, ITE",
       bio: "Department Head of Information Technology Engineering",
-      image: "/fem.jpg",
+      image: "/.jpg",
       linkedin: "#"
     },
     {
@@ -26,7 +26,7 @@ export default function TeamPage() {
       name: "Ms. Sapna Gupta",
       role: "Faculty Coordinator",
       bio: "Faculty coordinator for Startup Sphere",
-      image: "/shubh.jpg",
+      image: "/.jpg",
       linkedin: "#"
     }
   ];
@@ -35,35 +35,27 @@ export default function TeamPage() {
     {
       id: 1,
       name: "Shubham Raj",
-      role: "Co-Head Venture Lab",
+      role: "Founder",
       bio: "Driving innovation and entrepreneurship",
       image: "/shubh.jpg",
       linkedin: "#"
     },
     {
       id: 2,
-      name: "Pratham Batra",
-      role: "Co-Founder, Geek Room",
+      name: "Kartik",
+      role: "Head, Venture Lab",
       bio: "Entrepreneur and mentor",
-      image: "/jiya.jpg",
+      image: "/.jpg",
       linkedin: "#"
     },
     {
       id: 3,
-      name: "Sanidhya Goel",
-      role: "Hackathons Winner",
+      name: "Shubham Solanki",
+      role: "Co-Head, Venture Lab",
       bio: "Judge and mentor for various competitions",
-      image: "/fem.jpg",
+      image: "/.jpg",
       linkedin: "#"
     },
-    {
-      id: 4,
-      name: "Sourav Bera",
-      role: "Software Engineer, Microsoft",
-      bio: "Technology expert and advisor",
-      image: "/team.jpg",
-      linkedin: "#"
-    }
   ];
 
   const teamGroups = [

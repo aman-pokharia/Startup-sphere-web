@@ -71,6 +71,7 @@
     "@react-three/fiber": "^9.5.0",
     "clsx": "^2.1.0",
     "framer-motion": "^10.17.12",
+    "gl-matrix": "^3.4.4",
     "motion": "^12.29.2",
     "next": "^16.1.6",
     "react": "^19.2.4",
