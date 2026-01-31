@@ -47,12 +47,28 @@ export const HeroContent = () => {
           Your gateway to entrepreneurial success. We nurture, empower, and accelerate startups with resources, mentorship, and networking. From ideation to execution, we&apos;re here to fuel your journey.
         </motion.p>
 
-        <motion.div variants={slideInFromLeft(1)}>
+        <motion.div variants={slideInFromLeft(1)} className="flex flex-wrap gap-4 mt-2">
           <Link
             href="/about"
-            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] inline-block"
+            className="group px-8 py-3.5 font-medium text-white rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] bg-purple-600 hover:bg-purple-500 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30"
           >
-            Learn more
+            <span className="flex items-center gap-2">
+              Learn more
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </Link>
+          <Link
+            href="/contact"
+            className="group px-8 py-3.5 font-medium text-white rounded-xl border-2 border-purple-500/60 hover:border-cyan-400/80 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:bg-purple-500/10 backdrop-blur-sm"
+          >
+            <span className="flex items-center gap-2">
+              Join us
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+            </span>
           </Link>
         </motion.div>
       </motion.div>

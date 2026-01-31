@@ -262,21 +262,21 @@ export const PROJECTS = [
     title: "Fish Tank 2.0",
     description:
       "Our flagship pitching competition celebrating ideas, innovation and courage. Participants pitched solutions with passion and vision. Distinguished jury and mentors provided invaluable insights. Growth happens when ideas are challenged, guidance is given, and collaboration takes place.",
-    image: "/projects/project-1.png",
+    image: "/fish.jpg",
     link: "https://www.linkedin.com/company/startups-sphere/",
   },
   {
     title: "CampusMart & Venture Lab",
     description:
       "From campus idea to platform empowering student entrepreneurs. Meet ventures like CampusMart – redefining campus innovation. At Startup Sphere we support and celebrate student-led ventures shaping the future through creativity, courage, and collaboration.",
-    image: "/projects/project-2.png",
+    image: "/.jpg",
     link: "https://www.linkedin.com/company/startups-sphere/",
   },
   {
     title: "Canva Basics Workshop",
     description:
       "Exclusive learning session for our members – hands-on class to create impactful posters, presentations, and social media creatives from scratch. At Startup Sphere we believe in empowering our community with skills that amplify ideas and make them stand out.",
-    image: "/projects/project-3.png",
+    image: "/.png",
     link: "https://www.linkedin.com/company/startups-sphere/",
   },
 ] as const;

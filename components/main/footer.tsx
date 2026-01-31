@@ -51,13 +51,21 @@ export const Footer = () => {
   return (
     <footer className="w-full bg-[#08080a]">
       {/* CTA section - joined with footer */}
-      <section className="w-full px-4 md:px-8 py-16 md:py-20 bg-[#08080a]">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <div className="space-y-3">
-            <h2 className="text-2xl md:text-4xl font-bold text-white">
+      <section 
+        className="w-full px-4 md:px-8 py-32 md:py-40 relative min-h-[500px] flex items-center justify-center overflow-hidden bg-[#08080a]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.5)), url('/team.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-white max-w-2xl mx-auto leading-tight">
               Ready to Start Your Journey?
             </h2>
-            <p className="text-gray-400">
+            <p className="text-lg text-white/90 max-w-xl mx-auto">
               If you have an idea that can make a difference, this is your sign to build it.
             </p>
           </div>
@@ -66,17 +74,21 @@ export const Footer = () => {
               href="https://www.linkedin.com/company/startups-sphere/"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-all shadow-[0_0_24px_rgba(255,255,255,0.15)]"
+              className="inline-flex items-center justify-center gap-2 py-4 px-10 bg-white text-black font-semibold rounded-xl hover:bg-white/95 transition-all min-w-[180px]"
             >
               Join Community
+              <span className="text-lg">→</span>
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border-2 border-white/80 text-white text-sm font-semibold hover:bg-white/5 transition-all shadow-[0_0_20px_rgba(255,255,255,0.08)]"
+              className="inline-flex items-center justify-center gap-2 py-4 px-10 bg-transparent text-white font-semibold rounded-xl border-2 border-white hover:bg-white/10 transition-all min-w-[180px]"
             >
               Get In Touch
             </Link>
           </div>
+          <p className="text-sm text-white/70">
+            Join 400+ followers on LinkedIn · Department of ITE, MAIT
+          </p>
         </div>
       </section>
 
