@@ -1,3 +1,4 @@
+// @ts-nocheck - framer-motion types incompatible with React 19
 "use client";
 
 import { SparklesIcon } from "@heroicons/react/24/solid";
@@ -13,16 +14,13 @@ import {
 
 export const HeroContent = () => {
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-28 w-full z-[20]"
-    >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        <motion.div
-          variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
-        >
+    <div className="flex flex-row items-center justify-center px-20 mt-28 w-full z-[20]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start"
+      >
+        <motion.div variants={slideInFromTop} className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]">
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
             Department of ITE, MAIT – Delhi
@@ -57,21 +55,20 @@ export const HeroContent = () => {
             Learn more
           </Link>
         </motion.div>
-      </div>
-
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
-      >
-        <Image
-          src="/hero-bg.svg"
-          alt="work icons"
-          height={650}
-          width={650}
-          draggable={false}
-          className="select-none"
-        />
       </motion.div>
-    </motion.div>
+
+      <div className="w-full h-full flex justify-center items-center">
+        <motion.div variants={slideInFromRight(0.8)} className="w-full h-full flex justify-center items-center">
+          <Image
+            src="/hero-bg.svg"
+            alt="work icons"
+            height={650}
+            width={650}
+            draggable={false}
+            className="select-none"
+          />
+        </motion.div>
+      </div>
+    </div>
   );
 };

@@ -1,12 +1,12 @@
 "use client";
 
 import { Points, PointMaterial } from "@react-three/drei";
-import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
+import { Canvas, type ThreeElements, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
 import { useState, useRef, Suspense } from "react";
 import type { Points as PointsType } from "three";
 
-export const StarBackground = (props: PointsProps) => {
+export const StarBackground = (props: ThreeElements["points"]) => {
   const ref = useRef<PointsType | null>(null);
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
@@ -22,7 +22,8 @@ export const StarBackground = (props: PointsProps) => {
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points
-        ref={ref}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- drei Points ref type mismatch with @types/three
+        ref={ref as any}
         stride={3}
         positions={new Float32Array(sphere)}
         frustumCulled

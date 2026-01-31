@@ -1,3 +1,4 @@
+// @ts-nocheck - framer-motion types incompatible with React 19
 "use client";
 
 import { SparklesIcon } from "@heroicons/react/24/solid";

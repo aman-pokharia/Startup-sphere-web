@@ -40,16 +40,6 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-
-            {/* Join Us */}
-            <Link
-              href={LINKS.linkedin}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
-            >
-              Join Us
-            </Link>
           </div>
         </div>
 
