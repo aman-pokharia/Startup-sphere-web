@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 
 export const siteConfig: Metadata = {
-  title: "John Doe | Space Portfolio",
-  description: "Welcome to my full stack Next.js 14 space portfolio.",
+  title: "Startup Sphere | ITE MAIT",
+  description: "Welcome to the Startup Sphere Society at ITE MAIT College – your gateway to entrepreneurial success. We nurture, empower, and accelerate startups with resources, mentorship, and networking.",
   keywords: [
+    "Startup Sphere",
+    "MAIT",
+    "ITE",
+    "entrepreneurship",
+    "innovation",
+    "startups",
+    "Maharaja Agrasen Institute of Technology",
     "reactjs",
     "nextjs",
-    "vercel",
     "react",
-    "space-portfolio",
-    "portfolio",
     "react-icons",
     "cn",
     "clsx",
@@ -35,7 +39,7 @@ export const siteConfig: Metadata = {
     "css",
   ] as Array<string>,
   authors: {
-    name: "Sanidhya Kumar Verma",
-    url: "https://github.com/sanidhyy",
+    name: "Startup Sphere",
+    url: "https://www.linkedin.com/company/startups-sphere/",
   },
 } as const;

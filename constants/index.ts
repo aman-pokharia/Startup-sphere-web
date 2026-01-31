@@ -90,14 +90,14 @@ export const SKILL_DATA = [
 
 export const SOCIALS = [
   {
+    name: "LinkedIn",
+    icon: RxLinkedinLogo,
+    link: "https://www.linkedin.com/company/startups-sphere/",
+  },
+  {
     name: "Instagram",
     icon: RxInstagramLogo,
     link: "https://instagram.com",
-  },
-  {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://facebook.com",
   },
   {
     name: "Twitter",
@@ -259,25 +259,25 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "Fish Tank 2.0",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
+      "Our flagship pitching competition celebrating ideas, innovation and courage. Participants pitched solutions with passion and vision. Distinguished jury and mentors provided invaluable insights. Growth happens when ideas are challenged, guidance is given, and collaboration takes place.",
     image: "/projects/project-1.png",
-    link: "https://example.com",
+    link: "https://www.linkedin.com/company/startups-sphere/",
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "CampusMart & Venture Lab",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
+      "From campus idea to platform empowering student entrepreneurs. Meet ventures like CampusMart – redefining campus innovation. At Startup Sphere we support and celebrate student-led ventures shaping the future through creativity, courage, and collaboration.",
     image: "/projects/project-2.png",
-    link: "https://example.com",
+    link: "https://www.linkedin.com/company/startups-sphere/",
   },
   {
-    title: "Space Themed Website",
+    title: "Canva Basics Workshop",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
+      "Exclusive learning session for our members – hands-on class to create impactful posters, presentations, and social media creatives from scratch. At Startup Sphere we believe in empowering our community with skills that amplify ideas and make them stand out.",
     image: "/projects/project-3.png",
-    link: "https://example.com",
+    link: "https://www.linkedin.com/company/startups-sphere/",
   },
 ] as const;
 
@@ -286,9 +286,9 @@ export const FOOTER_DATA = [
     title: "Community",
     data: [
       {
-        name: "YouTube",
-        icon: FaYoutube,
-        link: "https://youtube.com",
+        name: "LinkedIn",
+        icon: RxLinkedinLogo,
+        link: "https://www.linkedin.com/company/startups-sphere/",
       },
       {
         name: "GitHub",
@@ -303,7 +303,7 @@ export const FOOTER_DATA = [
     ],
   },
   {
-    title: "Social Media",
+    title: "Connect",
     data: [
       {
         name: "Instagram",
@@ -316,29 +316,29 @@ export const FOOTER_DATA = [
         link: "https://twitter.com",
       },
       {
-        name: "Linkedin",
+        name: "LinkedIn",
         icon: RxLinkedinLogo,
-        link: "https://linkedin.com",
+        link: "https://www.linkedin.com/company/startups-sphere/",
       },
     ],
   },
   {
-    title: "About",
+    title: "Startup Sphere",
     data: [
       {
-        name: "Become Sponsor",
+        name: "About",
         icon: null,
-        link: "https://youtube.com",
+        link: "/about",
       },
       {
-        name: "Learning about me",
+        name: "Events",
         icon: null,
-        link: "https://example.com",
+        link: "/events",
       },
       {
-        name: "Contact Me",
+        name: "Contact",
         icon: null,
-        link: "mailto:contact@example.com",
+        link: "/contact",
       },
     ],
   },
@@ -346,19 +346,23 @@ export const FOOTER_DATA = [
 
 export const NAV_LINKS = [
   {
-    title: "About me",
-    link: "#about-me",
+    title: "About",
+    link: "/about",
   },
   {
-    title: "Skills",
-    link: "#skills",
+    title: "Events",
+    link: "/events",
   },
   {
-    title: "Projects",
-    link: "#projects",
+    title: "Team",
+    link: "/team",
+  },
+  {
+    title: "Contact",
+    link: "/contact",
   },
 ] as const;
 
 export const LINKS = {
-  sourceCode: "https://github.com/sanidhyy/space-portfolio",
+  linkedin: "https://www.linkedin.com/company/startups-sphere/",
 };

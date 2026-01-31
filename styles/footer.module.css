@@ -1,0 +1,44 @@
+.brandContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coolText {
+  font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  line-height: 0.9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.startupText {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(45deg, #ffffff, #e0e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  height: clamp(40px, 8vw, 80px) !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+.sphereText {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(45deg, #a0a0ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

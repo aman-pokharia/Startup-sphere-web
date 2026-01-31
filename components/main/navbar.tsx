@@ -9,24 +9,24 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
+      <div className="relative h-[65px] w-full max-w-7xl mx-auto rounded-2xl shadow-xl shadow-[#2A0E61]/40 bg-[#030014]/80 backdrop-blur-xl border border-[rgba(112,66,248,0.15)] px-4 md:px-6">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
+      <div className="w-full h-full flex items-center justify-between">
         {/* Logo + Name */}
         <Link
-          href="#about-me"
+          href="/"
           className="flex items-center"
         >
           <Image
-            src="/logo.png"
+            src="/logo69.png"
             alt="Logo"
-            width={70}
-            height={70}
+            width={100}
+            height={100}
             draggable={false}
             className="cursor-pointer"
           />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">John Doe</div>
-        </Link>
+          </Link>
 
         {/* Web Navbar */}
         <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
@@ -41,14 +41,14 @@ export const Navbar = () => {
               </Link>
             ))}
 
-            {/* Source Code */}
+            {/* Join Us */}
             <Link
-              href={LINKS.sourceCode}
+              href={LINKS.linkedin}
               target="_blank"
               rel="noreferrer noopener"
               className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
             >
-              Source Code
+              Join Us
             </Link>
           </div>
         </div>
@@ -78,7 +78,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 rounded-2xl shadow-xl bg-[#030014]/95 backdrop-blur-xl border border-[rgba(112,66,248,0.15)] p-5 flex flex-col items-center text-gray-300 md:hidden">
           {/* Links */}
           <div className="flex flex-col items-center gap-4">
             {NAV_LINKS.map((link) => (
@@ -92,13 +92,13 @@ export const Navbar = () => {
               </Link>
             ))}
             <Link
-              href={LINKS.sourceCode}
+              href={LINKS.linkedin}
               target="_blank"
               rel="noreferrer noopener"
               className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Source Code
+              Join Us
             </Link>
           </div>
 
@@ -117,6 +117,7 @@ export const Navbar = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };
