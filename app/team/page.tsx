@@ -1,6 +1,7 @@
+'use client'
 import React, { useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Linkedin, ExternalLink, ShieldCheck, Cpu, Globe } from 'lucide-react';
+import { Linkedin, ExternalLink, ShieldCheck, Cpu, Globe ,Instagram} from 'lucide-react';
 
 interface TeamMember {
   id: number;
@@ -10,6 +11,7 @@ interface TeamMember {
   image: string;
   linkedin: string;
   accent: string;
+  instagram: string;
 }
 
 interface TeamGroup {
@@ -27,6 +29,7 @@ const TeamPage: React.FC = () => {
       bio: "Leading Startup Sphere with vision and innovation, bridging the gap between student potential and market reality.",
       image: "https://media.licdn.com/dms/image/v2/D5603AQHpQG9NxWBCWA/profile-displayphoto-shrink_800_800/B56ZPuknIoGsAg-/0/1734874395982?e=1771459200&v=beta&t=3NjZzYbAImtgxg2lJ0AkpBOHztD5w1Ew6_oyDkOIsGg",
       linkedin: "https://www.linkedin.com/in/jiyachugh/",
+      instagram: "#",
       accent: "from-purple-500 to-indigo-500"
     }
   ];
@@ -39,6 +42,7 @@ const TeamPage: React.FC = () => {
       bio: "Department Head of Information Technology Engineering with a focus on academic excellence.",
       image: "https://media.licdn.com/dms/image/v2/C4D03AQHCVfTXnJzUmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643182954113?e=1771459200&v=beta&t=FJrmAIHgMVFxUUsRnHK-xfBABnYLkYSqBWh5gNHGHGg",
       linkedin: "https://www.linkedin.com/in/dr-bhoomi-gupta-3278a734/",
+      instagram: "#",
       accent: "from-blue-500 to-cyan-500"
     },
     {
@@ -48,6 +52,7 @@ const TeamPage: React.FC = () => {
       bio: "Driving the administrative and mentorship bridge for Startup Sphere initiatives.",
       image: "https://media.licdn.com/dms/image/v2/D5603AQE49jaTKP6N7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695826184887?e=1771459200&v=beta&t=Sp7cp4Ii7dyYf2szTBwPgeNwgYFrsrS09-73kHvsYqE",
       linkedin: "https://www.linkedin.com/in/sapna-gupta-7ba94a219/",
+      instagram: "#",
       accent: "from-cyan-500 to-teal-500"
     }
   ];
@@ -60,6 +65,7 @@ const TeamPage: React.FC = () => {
       bio: "Driving innovation and entrepreneurship. Building the foundation of the startup ecosystem.",
       image: "https://media.licdn.com/dms/image/v2/D5603AQGMM-OnvswwDA/profile-displayphoto-crop_800_800/B56ZpSntCWI4AI-/0/1762322731998?e=1771459200&v=beta&t=o69Tanm_c6KpLH2bestXd9Q29kFoD-ad1De48JI39oA",
       linkedin: "https://www.linkedin.com/in/shubham-raj-62755628b/",
+      instagram: "#",
       accent: "from-violet-600 to-purple-600"
     },
     {
@@ -69,6 +75,7 @@ const TeamPage: React.FC = () => {
       bio: "Entrepreneur and mentor guiding student startups from ideation to prototype.",
       image: "https://media.licdn.com/dms/image/v2/D5603AQHPvF9dTmUZfA/profile-displayphoto-crop_800_800/B56ZhBV8dSHUAI-/0/1753442929996?e=1771459200&v=beta&t=_fmoM7VeZUe32NXFkjvXOCwE1qhLexWseFUIPwyo7hI",
       linkedin: "https://www.linkedin.com/in/kartik-singh19/",
+      instagram: "#",
       accent: "from-orange-500 to-red-500"
     },
     {
@@ -78,6 +85,7 @@ const TeamPage: React.FC = () => {
       bio: "Judge and mentor for various competitions, specializing in business model validation.",
       image: "https://media.licdn.com/dms/image/v2/D4D03AQGG51UkVP8aew/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732520079133?e=1771459200&v=beta&t=a8n5UUpFJ1P-MaMLM3KK_io3mQMdI3irXpEygNPHq10",
       linkedin: "https://www.linkedin.com/in/shubham-solanki-902331321/",
+      instagram: "https://www.instagram.com/the._.solanki_17/",
       accent: "from-emerald-500 to-teal-500"
     },
   ];
@@ -212,6 +220,15 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                     className="p-3 rounded-xl bg-white/10 hover:bg-white hover:text-black transition-all active:scale-95"
                   >
                     <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href={member.instagram} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                    className="p-3 rounded-xl bg-white/10 hover:bg-white hover:text-black transition-all active:scale-95"
+                  >
+                    <Instagram className="w-5 h-5" />
                   </a>
                 </div>
               </motion.div>
