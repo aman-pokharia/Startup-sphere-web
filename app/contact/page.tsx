@@ -72,8 +72,8 @@ const ContactPage: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
         >
+          <div className="text-center mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-cyan-400" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-gray-300">Get in touch</span>
@@ -85,6 +85,7 @@ const ContactPage: React.FC = () => {
             Get in touch with Startup Sphere – we'd love to hear from you. Whether you want to join our community, 
             partner with us, or learn more about our initiatives, reach out through the channels below.
           </p>
+        </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
@@ -93,8 +94,8 @@ const ContactPage: React.FC = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="lg:col-span-5 space-y-12"
           >
+            <div className="lg:col-span-5 space-y-12">
             <div className="space-y-8">
               <h2 className="text-4xl font-bold italic tracking-tight">Reach out directly</h2>
               
@@ -154,6 +155,7 @@ const ContactPage: React.FC = () => {
                 ))}
               </div>
             </div>
+            </div>
           </motion.div>
 
           {/* Right: Modern Form */}
@@ -161,8 +163,8 @@ const ContactPage: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="lg:col-span-7"
           >
+            <div className="lg:col-span-7">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
               <div className="relative bg-[#0a0a0a] rounded-[3rem] p-10 md:p-14 border border-white/5">
@@ -234,6 +236,7 @@ const ContactPage: React.FC = () => {
                 </form>
               </div>
             </div>
+            </div>
           </motion.div>
         </div>
 
@@ -242,8 +245,8 @@ const ContactPage: React.FC = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32"
         >
+          <div className="mt-32">
           <div className="relative rounded-[3rem] overflow-hidden border border-white/5 group">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#020202] z-10 pointer-events-none" />
             <iframe
@@ -257,6 +260,7 @@ const ContactPage: React.FC = () => {
             ></iframe>
             
           
+          </div>
           </div>
         </motion.section>
       </main>

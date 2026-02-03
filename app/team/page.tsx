@@ -21,19 +21,6 @@ interface TeamGroup {
 }
 
 const TeamPage: React.FC = () => {
-  const leadershipTeam: TeamMember[] = [
-    {
-      id: 1,
-      name: "Jiya Chugh",
-      role: "President",
-      bio: "Leading Startup Sphere with vision and innovation, bridging the gap between student potential and market reality.",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQHpQG9NxWBCWA/profile-displayphoto-shrink_800_800/B56ZPuknIoGsAg-/0/1734874395982?e=1771459200&v=beta&t=3NjZzYbAImtgxg2lJ0AkpBOHztD5w1Ew6_oyDkOIsGg",
-      linkedin: "https://www.linkedin.com/in/jiyachugh/",
-      instagram: "#",
-      accent: "from-purple-500 to-indigo-500"
-    }
-  ];
-
   const facultyTeam: TeamMember[] = [
     {
       id: 1,
@@ -54,6 +41,19 @@ const TeamPage: React.FC = () => {
       linkedin: "https://www.linkedin.com/in/sapna-gupta-7ba94a219/",
       instagram: "#",
       accent: "from-cyan-500 to-teal-500"
+    }
+  ];
+
+  const leadershipTeam: TeamMember[] = [
+    {
+      id: 1,
+      name: "Jiya Chugh",
+      role: "President",
+      bio: "Leading Startup Sphere with vision and innovation, bridging the gap between student potential and market reality.",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQHpQG9NxWBCWA/profile-displayphoto-shrink_800_800/B56ZPuknIoGsAg-/0/1734874395982?e=1771459200&v=beta&t=3NjZzYbAImtgxg2lJ0AkpBOHztD5w1Ew6_oyDkOIsGg",
+      linkedin: "https://www.linkedin.com/in/jiyachugh/",
+      instagram: "#",
+      accent: "from-purple-500 to-indigo-500"
     }
   ];
 
@@ -87,12 +87,40 @@ const TeamPage: React.FC = () => {
       linkedin: "https://www.linkedin.com/in/shubham-solanki-902331321/",
       instagram: "https://www.instagram.com/the._.solanki_17/",
       accent: "from-emerald-500 to-teal-500"
+    }
+  ];
+
+  const subDepartments = [
+    {
+      title: "Venture Lab",
+      description: "Where ideas take flight. Our incubation hub that nurtures startups from concept to creation, providing mentorship, resources, and funding guidance.",
+      icon: <Cpu className="w-6 h-6" />
     },
+    {
+      title: "Design and Media",
+      description: "The creative powerhouse behind our visual identity. Crafting compelling brand experiences, digital content, and innovative design solutions.",
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: "Research & Innovation",
+      description: "Driving cutting-edge research and fostering innovation culture. Exploring emerging technologies and developing groundbreaking solutions.",
+      icon: <ShieldCheck className="w-6 h-6" />
+    },
+    {
+      title: "Events & Operations",
+      description: "The engine that brings our vision to life. Orchestrating seamless experiences, managing logistics, and ensuring flawless execution.",
+      icon: <Cpu className="w-6 h-6" />
+    },
+    {
+      title: "Outreach & Collaboration",
+      description: "Building bridges across communities. Expanding our network, forging partnerships, and creating opportunities for growth and collaboration.",
+      icon: <Globe className="w-6 h-6" />
+    }
   ];
 
   const teamGroups: TeamGroup[] = [
-    { title: "Leadership", members: leadershipTeam, icon: <ShieldCheck className="w-6 h-6" /> },
     { title: "Faculty Mentors", members: facultyTeam, icon: <Cpu className="w-6 h-6" /> },
+    { title: "Leadership", members: leadershipTeam, icon: <ShieldCheck className="w-6 h-6" /> },
     { title: "The Core", members: coreTeam, icon: <Globe className="w-6 h-6" /> }
   ];
 
@@ -109,17 +137,19 @@ const TeamPage: React.FC = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6 italic leading-[1.1]"
           >
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6 italic leading-[1.1]">
             THE <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30 whitespace-nowrap">ARCHITECTS</span>
+          </h1>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide px-4"
           >
+            <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide px-4">
             A collective of visionaries, mentors, and builders driving the startup culture at Startup Sphere.
+          </p>
           </motion.p>
         </div>
 
@@ -135,7 +165,7 @@ const TeamPage: React.FC = () => {
                 <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 {group.members.map((member, mIdx) => (
                   <TeamCard key={member.id} member={member} index={mIdx} />
                 ))}
@@ -143,6 +173,53 @@ const TeamPage: React.FC = () => {
             </section>
           ))}
         </div>
+
+        {/* Sub-Departments Section */}
+        <section className="mt-32">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-4 py-2 px-6 rounded-full border border-purple-500/30 bg-purple-500/5 backdrop-blur-md mb-6">
+              <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+              <p className="text-[13px] font-medium tracking-wider text-purple-200 uppercase">
+                Our Divisions
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 italic">
+              SUB-<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">DEPARTMENTS</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
+              Specialized teams driving different aspects of our entrepreneurial ecosystem
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {subDepartments.map((dept, index) => (
+              <motion.div
+                key={dept.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="group relative rounded-3xl border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent p-8 hover:border-purple-500/30 transition-all duration-500">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:bg-purple-500/20 transition-colors">
+                    {dept.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold tracking-tight uppercase italic text-white">
+                    {dept.title}
+                  </h3>
+                </div>
+                <p className="text-gray-400 leading-relaxed font-light">
+                  {dept.description}
+                </p>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-3 h-3 border-t border-r border-purple-500" />
+                </div>
+              </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
       </main>
     </div>
   );
@@ -166,12 +243,14 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      onMouseEnter={() => setIsActive(true)}
-      onMouseLeave={() => setIsActive(false)}
-      onClick={handleToggle}
-      className="group relative cursor-pointer outline-none"
     >
-      <div className={`relative aspect-[4/5] overflow-hidden rounded-[2.5rem] border transition-all duration-500 
+      <div 
+        className="group relative cursor-pointer outline-none"
+        onMouseEnter={() => setIsActive(true)}
+        onMouseLeave={() => setIsActive(false)}
+        onClick={handleToggle}
+      >
+      <div className={`relative aspect-[3/4] overflow-hidden rounded-[2.5rem] border transition-all duration-500 
         ${isActive ? 'border-white/40 shadow-[0_0_50px_rgba(168,85,247,0.2)]' : 'border-white/10 bg-[#0a0a0a]'}`}>
         
         {/* Profile Image */}
@@ -184,11 +263,9 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
         
         {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-        <div className={`absolute inset-0 transition-opacity duration-500 bg-gradient-to-br ${member.accent} 
-          ${isActive ? 'opacity-20' : 'opacity-0'}`} />
 
         {/* Text Content */}
-        <div className="absolute inset-x-0 bottom-0 p-6 z-20">
+        <div className="absolute inset-x-0 bottom-0 p-10 z-20">
           <div className="space-y-1">
             <h3 className={`text-2xl font-bold tracking-tight leading-none transition-all
               ${isActive ? 'text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400' : 'text-white'}`}>
@@ -206,8 +283,8 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="pt-4 overflow-hidden"
               >
+                <div className="pt-4 overflow-hidden">
                 <p className="text-sm text-gray-300 leading-relaxed font-light mb-4">
                   {member.bio}
                 </p>
@@ -231,21 +308,19 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                     <Instagram className="w-5 h-5" />
                   </a>
                 </div>
+              </div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        {/* Decorative Corner Icon */}
-        <div className={`absolute top-5 right-5 transition-all duration-500 
-          ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'}`}>
-           <ExternalLink className="w-5 h-5 text-white/70" />
-        </div>
+        {/* External Link Icon Removed */}
       </div>
 
       {/* Glow Effect Background */}
       <div className={`absolute -inset-px rounded-[2.5rem] bg-gradient-to-br ${member.accent} blur-xl transition-opacity duration-500 -z-10
         ${isActive ? 'opacity-15' : 'opacity-0'}`} />
+    </div>
     </motion.div>
   );
 };

@@ -315,8 +315,8 @@ const EventsPage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
         >
+          <div className="text-center mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
             <Sparkles className="w-4 h-4 text-purple-400" />
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">
@@ -333,6 +333,7 @@ const EventsPage: React.FC = () => {
             Witness the evolution of entrepreneurship. From the first spark of an idea 
             to full-scale ventures and industry-shaping workshops.
           </p>
+        </div>
         </motion.div>
 
         {/* Featured Section */}
@@ -373,8 +374,8 @@ const FeaturedEventCard = ({ event, index }: { event: EventItem; index: number }
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.1 }}
-    className="group relative flex flex-col bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_50px_rgba(0,0,0,0.5)]"
   >
+    <div className="group relative flex flex-col bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_50px_rgba(0,0,0,0.5)]">
     <div className="relative h-80 overflow-hidden">
       <img
         src={event.image}
@@ -430,6 +431,7 @@ const FeaturedEventCard = ({ event, index }: { event: EventItem; index: number }
         </button>
       </div>
     </div>
+    </div>
   </motion.div>
 );
 
@@ -440,8 +442,8 @@ const ListEventCard = ({ event, index }: { event: EventItem; index: number }) =>
     viewport={{ once: true }}
     transition={{ delay: index * 0.05 }}
     whileHover={{ scale: 1.01 }}
-    className="group flex flex-col md:flex-row gap-8 p-6 md:p-8 rounded-[2rem] bg-white/5 border border-white/5 hover:border-purple-500/30 hover:bg-white/[0.07] transition-all duration-500 overflow-hidden relative"
   >
+    <div className="group flex flex-col md:flex-row gap-8 p-6 md:p-8 rounded-[2rem] bg-white/5 border border-white/5 hover:border-purple-500/30 hover:bg-white/[0.07] transition-all duration-500 overflow-hidden relative">
     <div className={`absolute top-6 right-6 px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest z-20 ${
       event.type === 'Upcoming' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)]' : 'bg-white/5 text-gray-500 border border-white/10'
     }`}>
@@ -482,14 +484,15 @@ const ListEventCard = ({ event, index }: { event: EventItem; index: number }) =>
       <div className="flex items-center gap-6 mt-auto">
         <motion.button 
           whileTap={{ scale: 0.95 }}
-          className={`px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all duration-500 flex items-center gap-2 ${
+        >
+          <div className={`px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all duration-500 flex items-center gap-2 ${
             event.type === 'Upcoming' 
             ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-[0_0_20px_rgba(147,51,234,0.4)]' 
             : 'bg-white/10 text-white hover:bg-white/20'
-          }`}
-        >
+          }`}>
           {event.type === 'Upcoming' ? 'Register Now' : 'View Recap'}
           <ChevronRight className="w-3 h-3" />
+        </div>
         </motion.button>
         
         <div className="hidden sm:flex items-center gap-2 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
@@ -497,6 +500,7 @@ const ListEventCard = ({ event, index }: { event: EventItem; index: number }) =>
           {event.location}
         </div>
       </div>
+    </div>
     </div>
     
     <div className={`absolute -right-20 -bottom-20 w-80 h-80 bg-gradient-to-br ${event.accent} opacity-0 blur-[120px] group-hover:opacity-20 transition-opacity duration-700 pointer-events-none`} />
