@@ -1,138 +1,328 @@
-import Image from "next/image";
+'use client'
+import React, { useState, ReactNode } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Linkedin, ExternalLink, ShieldCheck, Cpu, Globe ,Instagram} from 'lucide-react';
 
-export default function TeamPage() {
-  const leadershipTeam = [
-    {
-      id: 1,
-      name: "Jiya Chugh",
-      role: "President",
-      bio: "Leading Startup Sphere with vision and innovation",
-      image: "/jiya.jpg",
-      linkedin: "#"
-    }
-  ];
+interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  linkedin: string;
+  accent: string;
+  instagram: string;
+}
 
-  const facultyTeam = [
+interface TeamGroup {
+  title: string;
+  members: TeamMember[];
+  icon: ReactNode;
+}
+
+const TeamPage: React.FC = () => {
+  const facultyTeam: TeamMember[] = [
     {
       id: 1,
       name: "Dr. Bhoomi Gupta",
       role: "HOD, ITE",
-      bio: "Department Head of Information Technology Engineering",
-      image: "/.jpg",
-      linkedin: "#"
+      bio: "Department Head of Information Technology Engineering with a focus on academic excellence.",
+      image: "https://media.licdn.com/dms/image/v2/C4D03AQHCVfTXnJzUmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643182954113?e=1771459200&v=beta&t=FJrmAIHgMVFxUUsRnHK-xfBABnYLkYSqBWh5gNHGHGg",
+      linkedin: "https://www.linkedin.com/in/dr-bhoomi-gupta-3278a734/",
+      instagram: "#",
+      accent: "from-blue-500 to-cyan-500"
     },
     {
       id: 2,
       name: "Ms. Sapna Gupta",
       role: "Faculty Coordinator",
-      bio: "Faculty coordinator for Startup Sphere",
-      image: "/.jpg",
-      linkedin: "#"
+      bio: "Driving the administrative and mentorship bridge for Startup Sphere initiatives.",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQE49jaTKP6N7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695826184887?e=1771459200&v=beta&t=Sp7cp4Ii7dyYf2szTBwPgeNwgYFrsrS09-73kHvsYqE",
+      linkedin: "https://www.linkedin.com/in/sapna-gupta-7ba94a219/",
+      instagram: "#",
+      accent: "from-cyan-500 to-teal-500"
     }
   ];
 
-  const coreTeam = [
+  const leadershipTeam: TeamMember[] = [
+    {
+      id: 1,
+      name: "Jiya Chugh",
+      role: "President",
+      bio: "Leading Startup Sphere with vision and innovation, bridging the gap between student potential and market reality.",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQHpQG9NxWBCWA/profile-displayphoto-shrink_800_800/B56ZPuknIoGsAg-/0/1734874395982?e=1771459200&v=beta&t=3NjZzYbAImtgxg2lJ0AkpBOHztD5w1Ew6_oyDkOIsGg",
+      linkedin: "https://www.linkedin.com/in/jiyachugh/",
+      instagram: "#",
+      accent: "from-purple-500 to-indigo-500"
+    }
+  ];
+
+  const coreTeam: TeamMember[] = [
     {
       id: 1,
       name: "Shubham Raj",
       role: "Founder",
-      bio: "Driving innovation and entrepreneurship",
-      image: "/shubh.jpg",
-      linkedin: "#"
+      bio: "Driving innovation and entrepreneurship. Building the foundation of the startup ecosystem.",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQGMM-OnvswwDA/profile-displayphoto-crop_800_800/B56ZpSntCWI4AI-/0/1762322731998?e=1771459200&v=beta&t=o69Tanm_c6KpLH2bestXd9Q29kFoD-ad1De48JI39oA",
+      linkedin: "https://www.linkedin.com/in/shubham-raj-62755628b/",
+      instagram: "#",
+      accent: "from-violet-600 to-purple-600"
     },
     {
       id: 2,
       name: "Kartik",
       role: "Head, Venture Lab",
-      bio: "Entrepreneur and mentor",
-      image: "/.jpg",
-      linkedin: "#"
+      bio: "Entrepreneur and mentor guiding student startups from ideation to prototype.",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQHPvF9dTmUZfA/profile-displayphoto-crop_800_800/B56ZhBV8dSHUAI-/0/1753442929996?e=1771459200&v=beta&t=_fmoM7VeZUe32NXFkjvXOCwE1qhLexWseFUIPwyo7hI",
+      linkedin: "https://www.linkedin.com/in/kartik-singh19/",
+      instagram: "#",
+      accent: "from-orange-500 to-red-500"
     },
     {
       id: 3,
       name: "Shubham Solanki",
       role: "Co-Head, Venture Lab",
-      bio: "Judge and mentor for various competitions",
-      image: "/.jpg",
-      linkedin: "#"
-    },
-  ];
-
-  const teamGroups = [
-    {
-      title: "Leadership",
-      members: leadershipTeam
-    },
-    {
-      title: "Faculty Team",
-      members: facultyTeam
-    },
-    {
-      title: "Core Team",
-      members: coreTeam
+      bio: "Judge and mentor for various competitions, specializing in business model validation.",
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQGG51UkVP8aew/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732520079133?e=1771459200&v=beta&t=a8n5UUpFJ1P-MaMLM3KK_io3mQMdI3irXpEygNPHq10",
+      linkedin: "https://www.linkedin.com/in/shubham-solanki-902331321/",
+      instagram: "https://www.instagram.com/the._.solanki_17/",
+      accent: "from-emerald-500 to-teal-500"
     }
   ];
 
+  const subDepartments = [
+    {
+      title: "Venture Lab",
+      description: "Where ideas take flight. Our incubation hub that nurtures startups from concept to creation, providing mentorship, resources, and funding guidance.",
+      icon: <Cpu className="w-6 h-6" />
+    },
+    {
+      title: "Design and Media",
+      description: "The creative powerhouse behind our visual identity. Crafting compelling brand experiences, digital content, and innovative design solutions.",
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: "Research & Innovation",
+      description: "Driving cutting-edge research and fostering innovation culture. Exploring emerging technologies and developing groundbreaking solutions.",
+      icon: <ShieldCheck className="w-6 h-6" />
+    },
+    {
+      title: "Events & Operations",
+      description: "The engine that brings our vision to life. Orchestrating seamless experiences, managing logistics, and ensuring flawless execution.",
+      icon: <Cpu className="w-6 h-6" />
+    },
+    {
+      title: "Outreach & Collaboration",
+      description: "Building bridges across communities. Expanding our network, forging partnerships, and creating opportunities for growth and collaboration.",
+      icon: <Globe className="w-6 h-6" />
+    }
+  ];
+
+  const teamGroups: TeamGroup[] = [
+    { title: "Faculty Mentors", members: facultyTeam, icon: <Cpu className="w-6 h-6" /> },
+    { title: "Leadership", members: leadershipTeam, icon: <ShieldCheck className="w-6 h-6" /> },
+    { title: "The Core", members: coreTeam, icon: <Globe className="w-6 h-6" /> }
+  ];
+
   return (
-    <main className="min-h-screen pt-24 pb-20 px-4 md:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
-            Our Team
+    <div className="min-h-screen bg-[#020202] text-white selection:bg-purple-500/30 overflow-x-hidden">
+      {/* Background Ambience */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-purple-600/10 blur-[120px] rounded-full" />
+      </div>
+
+      <main className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 font-sans">
+        {/* Hero Section */}
+        <div className="text-center mb-24 px-4">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6 italic leading-[1.1]">
+            THE <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30 whitespace-nowrap">ARCHITECTS</span>
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Meet the passionate individuals driving innovation and entrepreneurship
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide px-4">
+            A collective of visionaries, mentors, and builders driving the startup culture at Startup Sphere.
           </p>
+          </motion.p>
         </div>
 
-        <div className="space-y-16">
-          {teamGroups.map((group, index) => (
-            <section key={index} className="space-y-8">
-              <h2 className="text-3xl font-bold text-white border-l-4 border-purple-500 pl-4">
-                {group.title}
-              </h2>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {group.members.map((member) => (
-                  <div 
-                    key={member.id}
-                    className="bg-gradient-to-br from-[rgba(3,0,20,0.5)] to-[rgba(112,66,248,0.15)] border border-[rgba(112,66,248,0.2)] rounded-2xl overflow-hidden backdrop-blur-sm hover:shadow-[0_0_40px_rgba(113,47,255,0.2)] transition-all duration-300"
-                  >
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    </div>
-                    
-                    <div className="p-5">
-                      <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                      <p className="text-purple-400 font-medium mb-2">{member.role}</p>
-                      <p className="text-gray-300 text-sm mb-4">{member.bio}</p>
-                      
-                      <a 
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        LinkedIn
-                      </a>
-                    </div>
-                  </div>
+        {/* Team Sections */}
+        <div className="space-y-32">
+          {teamGroups.map((group, gIdx) => (
+            <section key={gIdx} className="relative">
+              <div className="flex items-center gap-4 mb-12">
+                <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-purple-400">
+                  {group.icon}
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight uppercase italic">{group.title}</h2>
+                <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                {group.members.map((member, mIdx) => (
+                  <TeamCard key={member.id} member={member} index={mIdx} />
                 ))}
               </div>
             </section>
           ))}
         </div>
-      </div>
-    </main>
+
+        {/* Sub-Departments Section */}
+        <section className="mt-32">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-4 py-2 px-6 rounded-full border border-purple-500/30 bg-purple-500/5 backdrop-blur-md mb-6">
+              <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+              <p className="text-[13px] font-medium tracking-wider text-purple-200 uppercase">
+                Our Divisions
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 italic">
+              SUB-<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">DEPARTMENTS</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
+              Specialized teams driving different aspects of our entrepreneurial ecosystem
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {subDepartments.map((dept, index) => (
+              <motion.div
+                key={dept.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="group relative rounded-3xl border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent p-8 hover:border-purple-500/30 transition-all duration-500">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:bg-purple-500/20 transition-colors">
+                    {dept.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold tracking-tight uppercase italic text-white">
+                    {dept.title}
+                  </h3>
+                </div>
+                <p className="text-gray-400 leading-relaxed font-light">
+                  {dept.description}
+                </p>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-3 h-3 border-t border-r border-purple-500" />
+                </div>
+              </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
   );
+};
+
+interface TeamCardProps {
+  member: TeamMember;
+  index: number;
 }
+
+const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  const handleToggle = (): void => {
+    setIsActive(!isActive);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+    >
+      <div 
+        className="group relative cursor-pointer outline-none"
+        onMouseEnter={() => setIsActive(true)}
+        onMouseLeave={() => setIsActive(false)}
+        onClick={handleToggle}
+      >
+      <div className={`relative aspect-[3/4] overflow-hidden rounded-[2.5rem] border transition-all duration-500 
+        ${isActive ? 'border-white/40 shadow-[0_0_50px_rgba(168,85,247,0.2)]' : 'border-white/10 bg-[#0a0a0a]'}`}>
+        
+        {/* Profile Image */}
+        <img
+          src={member.image}
+          alt={member.name}
+          className={`w-full h-full object-cover transition-transform duration-700 
+            ${isActive ? 'scale-110 grayscale-0' : 'scale-100 grayscale opacity-80'}`}
+        />
+        
+        {/* Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+
+        {/* Text Content */}
+        <div className="absolute inset-x-0 bottom-0 p-10 z-20">
+          <div className="space-y-1">
+            <h3 className={`text-2xl font-bold tracking-tight leading-none transition-all
+              ${isActive ? 'text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400' : 'text-white'}`}>
+              {member.name}
+            </h3>
+            <p className="text-purple-400 text-xs font-black uppercase tracking-widest py-1">
+              {member.role}
+            </p>
+          </div>
+
+          <AnimatePresence>
+            {isActive && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <div className="pt-4 overflow-hidden">
+                <p className="text-sm text-gray-300 leading-relaxed font-light mb-4">
+                  {member.bio}
+                </p>
+                <div className="flex items-center gap-4">
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                    className="p-3 rounded-xl bg-white/10 hover:bg-white hover:text-black transition-all active:scale-95"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href={member.instagram} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                    className="p-3 rounded-xl bg-white/10 hover:bg-white hover:text-black transition-all active:scale-95"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* External Link Icon Removed */}
+      </div>
+
+      {/* Glow Effect Background */}
+      <div className={`absolute -inset-px rounded-[2.5rem] bg-gradient-to-br ${member.accent} blur-xl transition-opacity duration-500 -z-10
+        ${isActive ? 'opacity-15' : 'opacity-0'}`} />
+    </div>
+    </motion.div>
+  );
+};
+
+export default TeamPage;
