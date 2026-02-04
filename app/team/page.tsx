@@ -222,7 +222,7 @@ const TeamPage: React.FC = () => {
               <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {subDepartments.map((dept, idx) => (
                 <SubDeptCard key={idx} dept={dept} index={idx} />
               ))}
@@ -244,46 +244,43 @@ const SubDeptCard: React.FC<{ dept: SubDept; index: number }> = ({ dept, index }
       transition={{ delay: index * 0.1, duration: 0.5 }}
       viewport={{ once: true }}
       onClick={() => setIsExpanded(!isExpanded)}
-      className={`group relative overflow-hidden rounded-[2.5rem] border transition-all duration-700 cursor-pointer flex flex-col min-h-[340px]
-        ${isExpanded ? 'bg-white/[0.08] border-white/30 shadow-2xl z-20' : 'bg-[#0a0a0a] border-white/10 hover:border-white/20 z-10'}`}
+      className={`group relative overflow-hidden rounded-[2.5rem] border transition-all duration-700 cursor-pointer flex flex-col min-h-[300px]
+        ${isExpanded ? 'bg-white/[0.08] border-white/30 shadow-2xl' : 'bg-white/5 border-white/10 hover:border-white/25 hover:bg-white/[0.06]'}`}
     >
-      {/* Background Image Layer */}
+      {/* Low Opacity Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
           src={dept.bgImage} 
           alt="" 
           className={`w-full h-full object-cover transition-all duration-1000 grayscale
-            ${isExpanded ? 'opacity-10 scale-105 blur-[1px]' : 'opacity-0 scale-100 group-hover:opacity-5'}`}
+            ${isExpanded ? 'opacity-15 scale-105' : 'opacity-5 scale-100 group-hover:opacity-10'}`}
         />
-        {/* Dark overlay to ensure text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020202]/60 via-transparent to-[#020202]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020202]/80 via-[#020202]/40 to-[#020202]/90" />
       </div>
 
-      <div className="relative z-10 p-8 sm:p-10 flex flex-col flex-1 h-full">
-        {/* Header: Icon & Trigger */}
-        <div className="flex justify-between items-center mb-8">
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white/60 group-hover:text-white transition-colors">
+      <div className="relative z-10 p-10 flex flex-col flex-1">
+        <div className="flex justify-between items-start mb-6">
+          <div className="p-3 rounded-2xl bg-white/10 border border-white/10 text-white/80 group-hover:text-white transition-colors">
             {dept.icon}
           </div>
-          <div className={`p-2 rounded-full transition-all duration-500 ${isExpanded ? 'bg-white text-black scale-110 shadow-lg' : 'bg-white/5 text-white/20 group-hover:text-white group-hover:bg-white/10'}`}>
-            <ArrowUpRight className={`w-5 h-5 transition-transform duration-500 ${isExpanded ? 'rotate-45' : ''}`} />
+          <div className={`p-2 rounded-xl transition-all duration-500 ${isExpanded ? 'rotate-45 bg-white text-black scale-110' : 'bg-white/5 text-white/30 group-hover:text-white group-hover:bg-white/10'}`}>
+            <ArrowUpRight className="w-5 h-5" />
           </div>
         </div>
 
-        {/* Content Area */}
         <div className="mt-auto">
-          <h3 className={`text-2xl font-black uppercase italic tracking-tighter mb-3 transition-all duration-300 ${dept.color} ${isExpanded ? 'scale-105 origin-left mb-4' : ''}`}>
+          <h3 className={`text-2xl font-black uppercase italic tracking-tighter mb-2 transition-all duration-300 ${dept.color} ${isExpanded ? 'scale-105 origin-left' : ''}`}>
             {dept.name}
           </h3>
           
-          <div className="flex items-center gap-3 mb-4">
-             <div className="flex -space-x-2 overflow-hidden">
+          <div className="flex items-center gap-2 mb-4">
+             <div className="flex -space-x-1.5 overflow-hidden">
                 {[1,2,3].map(i => (
-                  <div key={i} className="w-6 h-6 rounded-full border-2 border-[#020202] bg-gray-800" />
+                  <div key={i} className="w-5 h-5 rounded-full border border-black bg-gray-800" />
                 ))}
              </div>
-             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
-               {dept.members} Active Members
+             <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">
+               {dept.members} Members active
              </span>
           </div>
 
@@ -292,7 +289,6 @@ const SubDeptCard: React.FC<{ dept: SubDept; index: number }> = ({ dept, index }
           </p>
         </div>
 
-        {/* Expandable Details */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -302,20 +298,22 @@ const SubDeptCard: React.FC<{ dept: SubDept; index: number }> = ({ dept, index }
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="overflow-hidden"
             >
-              <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/20 to-transparent my-6" />
-              <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light">
+              <div className="h-px w-full bg-gradient-to-r from-white/20 to-transparent my-6" />
+              <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light italic">
                 {dept.details}
               </p>
-              <button className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-white text-black rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-gray-200 transition-all active:scale-95 shadow-xl">
-                Collaborate Now <Sparkles className="w-3 h-3 text-purple-600" />
-              </button>
+              <div className="flex items-center gap-4">
+                <button className="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-gray-200 transition-all">
+                  Get Involved <Sparkles className="w-3 h-3" />
+                </button>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      {/* Decorative Glow */}
-      <div className={`absolute -top-24 -right-24 w-64 h-64 blur-[100px] rounded-full transition-opacity duration-1000 -z-10 ${dept.glow} ${isExpanded ? 'opacity-30' : 'opacity-0'}`} />
+      {/* Glow highlight */}
+      <div className={`absolute top-0 right-0 w-48 h-48 blur-[80px] rounded-full transition-opacity duration-700 -z-10 ${dept.glow} ${isExpanded ? 'opacity-40' : 'opacity-0'}`} />
     </motion.div>
   );
 };

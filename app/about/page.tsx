@@ -76,8 +76,8 @@ const AboutPage: React.FC = () => {
         <motion.section 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-8"
         >
+          <div className="text-center space-y-8">
           <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full border border-purple-500/30 bg-purple-500/5 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
             <p className="text-[13px] font-medium tracking-wider text-purple-200 uppercase">
@@ -90,6 +90,7 @@ const AboutPage: React.FC = () => {
           <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
             Empowering the next generation of entrepreneurs through innovation, mentorship, and a thriving campus ecosystem.
           </p>
+          </div>
         </motion.section>
 
         {/* Welcome Block */}
@@ -97,8 +98,8 @@ const AboutPage: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="space-y-8"
         >
+          <div className="space-y-8">
           <div className="flex items-center gap-4">
             <span className="w-1.5 h-10 rounded-full bg-gradient-to-b from-purple-500 to-cyan-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
             <h2 className="text-3xl font-bold tracking-tight uppercase italic">Welcome to the Sphere</h2>
@@ -117,6 +118,7 @@ const AboutPage: React.FC = () => {
               <RocketLaunchIcon className="w-32 h-32" />
             </div>
           </div>
+          </div>
         </motion.section>
 
         {/* Mission & Vision Grid */}
@@ -125,12 +127,12 @@ const AboutPage: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
         >
+          <div className="grid md:grid-cols-2 gap-8">
           <motion.div 
             variants={itemVariants}
-            className="group rounded-[2rem] border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent p-8 flex flex-col gap-6 hover:border-purple-500/30 transition-all duration-500"
           >
+            <div className="group rounded-[2rem] border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent p-8 flex flex-col gap-6 hover:border-purple-500/30 transition-all duration-500">
             <div className="flex items-center gap-4">
               <div className="p-3 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:bg-purple-500/20 transition-colors">
                 <LightBulbIcon className="w-7 h-7" />
@@ -140,12 +142,13 @@ const AboutPage: React.FC = () => {
             <p className="text-gray-400 leading-relaxed text-lg font-light">
               To create a thriving ecosystem that supports student entrepreneurs at every stage of their journey, from initial ideation to successful business launch. We empower students with the knowledge and networks needed to turn innovation into reality.
             </p>
+          </div>
           </motion.div>
 
           <motion.div 
             variants={itemVariants}
-            className="group rounded-[2rem] border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent p-8 flex flex-col gap-6 hover:border-cyan-500/30 transition-all duration-500"
           >
+            <div className="group rounded-[2rem] border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent p-8 flex flex-col gap-6 hover:border-cyan-500/30 transition-all duration-500">
             <div className="flex items-center gap-4">
               <div className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
                 <CubeTransparentIcon className="w-7 h-7" />
@@ -155,7 +158,9 @@ const AboutPage: React.FC = () => {
             <p className="text-gray-400 leading-relaxed text-lg font-light">
               To be the leading student entrepreneurship society that produces successful startups and innovative leaders. We envision a future where every student with a great idea has the support and resources to bring it to life.
             </p>
+          </div>
           </motion.div>
+          </div>
         </motion.section>
 
         {/* Offerings Section */}
@@ -164,8 +169,8 @@ const AboutPage: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="space-y-12"
         >
+          <div className="space-y-12">
           <div className="flex items-center gap-4">
             <span className="w-1.5 h-10 rounded-full bg-gradient-to-b from-purple-500 to-cyan-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
             <h2 className="text-3xl font-bold tracking-tight uppercase italic">What We Offer</h2>
@@ -176,8 +181,8 @@ const AboutPage: React.FC = () => {
                 key={title}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="group relative rounded-3xl border border-white/5 bg-[#0a0a0a] p-8 flex flex-col gap-4 hover:border-purple-500/40 hover:bg-white/[0.02] transition-all duration-300"
               >
+                <div className="group relative rounded-3xl border border-white/5 bg-[#0a0a0a] p-8 flex flex-col gap-4 hover:border-purple-500/40 hover:bg-white/[0.02] transition-all duration-300">
                 <div className="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-2 border border-purple-500/20 group-hover:scale-110 transition-transform">
                   {icon}
                 </div>
@@ -191,8 +196,10 @@ const AboutPage: React.FC = () => {
                 <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-4 h-4 border-t border-r border-purple-500" />
                 </div>
+              </div>
               </motion.div>
             ))}
+          </div>
           </div>
         </motion.section>
 
@@ -201,8 +208,8 @@ const AboutPage: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-12"
         >
+          <div className="space-y-12">
           <div className="flex items-center gap-4">
             <span className="w-1.5 h-10 rounded-full bg-gradient-to-b from-purple-500 to-cyan-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
             <h2 className="text-3xl font-bold tracking-tight uppercase italic">Department Intelligence</h2>
@@ -247,18 +254,20 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
           </div>
+          </div>
         </motion.section>
 
         {/* Footer Tagline */}
         <motion.section 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="text-center"
         >
+          <div className="text-center">
           <div className="inline-block py-3 px-8 rounded-full border border-purple-500/20 bg-purple-500/5 backdrop-blur-sm group">
             <p className="text-sm font-bold tracking-widest text-gray-500 group-hover:text-purple-400 transition-colors uppercase">
               #StartupMAIT &nbsp;•&nbsp; #InnovationHub &nbsp;•&nbsp; #Entrepreneurship
             </p>
+          </div>
           </div>
         </motion.section>
       </div>
