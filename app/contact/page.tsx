@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState, useRef, ChangeEvent, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -6,7 +7,6 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  ChevronRight, 
   Twitter, 
   Instagram, 
   Sparkles,
